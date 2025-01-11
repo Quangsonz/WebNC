@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tin Tức - EIGHT SHOP</title>
+    <link rel="stylesheet" href="/Khanh/style.css">
+    <link rel="stylesheet" href="/Khanh/icon/themify-icons-font/themify-icons/themify-icons.css">
+</head>
+<body>
+    <div id="header"> </div>
+    <div id="main">
+        <div id="bannernews">
+            <img src="/Khanh/bannernews.jpg" alt="Banner Image">
+        </div>
+        <div id="content">
+            <div class="section" id="news">
+                <h2>Tin Tức</h2>
+                <div class="news-container">
+                    <div class="news-item">
+                        <img src="news-image1.jpg" alt="News Image 1">
+                        <h3>Quần Jean bị giãn gối, phải làm sao?</h3>
+                        <p>Quần jean là item năng động, thời thượng, cá tính có trong tủ đồ của mọi chàng trai. Tuy nhiên, sử dụng trong thời gian dài có thể quần jean bị giãn gối, vậy phải làm sao?</p>
+                        <a href="news-details1.html" class="read-more">Đọc thêm</a>
+                    </div>
+                    <div class="news-item">
+                        <img src="news-image2.jpg" alt="News Image 2">
+                        <h3>Cotton tái sinh là gì? Chất liệu Cotton tái sinh mang lại gì cho môi trường?</h3>
+                        <p>Cotton tái sinh là một giải pháp an toàn và vô cùng thân thiện với môi trường. Hiện nay, loại chất liệu này được đánh giá khá cao và là hướng đi mới cho ngành công nghiệp may mặc.</p>
+                        <a href="news-details2.html" class="read-more">Đọc thêm</a>
+                    </div>
+                    <div class="news-item">
+                        <img src="news-image3.jpg" alt="News Image 3">
+                        <h3>Giải đáp: Nên hay không để quần áo trong máy giặt qua đêm?</h3>
+                        <p>Hiện nay có rất nhiều người thường có thói quen để quần áo trong máy giặt qua đêm. Tuy nhiên việc này lại mang đến nhiều những tác hại, khiến trang phục có mùi hôi, ẩm mốc khó chịu. Đồng thời còn gây nguy hại tới sức khỏe bản thân và gia đình.</p>
+                        <a href="#" class="read-more">Đọc thêm</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div id="footer" class="footer"></div>
+</body>
+</html>
+<script>
+    // Function to load HTML content into a div
+    function loadHTMLContent(url, elementId) {
+        fetch(url)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById(elementId).innerHTML = data;
+            })
+            .catch(error => console.error('Error loading HTML content:', error));
+    }
+  
+    // Load header and footer
+    loadHTMLContent('/Duong/header.html', 'header');
+    loadHTMLContent('/Duong/footer.html', 'footer');
+  </script>
