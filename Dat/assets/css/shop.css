@@ -596,7 +596,7 @@
   display: flex;
   column-gap: 1.75rem;
   margin-top: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
 }
 
 .detail_tab{
@@ -633,6 +633,11 @@ table{
 .info_table tr td{
   color: var(--text-color-light);
   
+}
+
+.section_title{
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
 }
 /*=======================Shop==============*/
 .total_products{
