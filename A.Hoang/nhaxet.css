@@ -1,0 +1,555 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=League+Spartan:wght@100..900&display=swap');
+:root {
+    --header-height: 4rem;
+  
+    /*========== Colors ==========*/
+    /* Color mode HSL(hue, saturation, lightness) */
+    --first-color: hsl(176,88%,27%);
+    --first-color-alt: hsl(129,44%,94%);
+    --second-color: hsl(34,94%,87%);
+    --title-color: hsl(0,0%,13%);
+    --text-color: hsl(154,13%,32%);
+    --text-color-light: hsl(60,1%,56%);
+    --body-color: hsl(0,0%,100%);
+    --container-color: hsl(0,0%,93%);
+    --border-color: hsl(129,36%,85%);
+    --border-color-alt: hsl(113,15%,90%);
+  
+    /*========== Font and typography ==========*/
+    /* .5rem = 8px | 1rem = 16px ... */
+    --body-font: "Lato", sans-serif;
+    --second-font: "League Spartan", sans-serif;
+    --big-font-size:3.5rem ;
+    --h1-font-size: 2.75rem;
+    --h2-font-size: 2rem;
+    --h3-font-size: 1.75rem;
+    --h4-font-size: 1.375rem;
+    --large-font-size: 1.125rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.75rem;
+    --tiny-font-size: 0.6875rem;
+  
+    /*========== Font weight ==========*/
+    --weight-400: 400;
+    --weight-500: 500;
+    --weight-600: 600;
+    --weight-700: 700;
+  
+    /*========== Transition ==========*/
+    --transition: cubic-bezier(0,0,0.05,1);
+  }
+
+  @media screen and (max-width: 1200px) {
+    :root {
+      --big-font-size: ;
+      --h1-font-size: ;
+      --h2-font-size: ;
+      --h3-font-size: ;
+      --h4-font-size: ;
+      --large-font-size: ;
+      --normal-font-size: ;
+      --small-font-size: ;
+      --smaller-font-size: ;
+      --tiny-font-size: ;
+    }
+  }
+  
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  input,
+  textarea,
+  body{
+    color: var(--text-color);
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    font-weight: var(--weight-400);
+  }
+
+  body{
+    background-color: var(--body-color);
+  }
+
+  h1,h2,h3,h4{
+    font-family: var(--second-font);
+    color: var(--title-color);
+    font-weight: var(--weight-600);
+  }
+
+  ul{
+    list-style: none;
+  }
+
+  a{
+    text-decoration: none;
+  }
+
+  p{
+    line-height: 1.5rem;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  button,
+  textarea,
+  input{
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+
+  .container{
+    max-width: 1320px;
+    margin-inline :auto ;
+    padding-inline: 0.75rem;
+  }
+
+  .form_input{
+    border: 1px solid var(--border-color-alt);
+    padding-inline: 1rem;
+    height: 45px;
+    border-radius: 0.25rem;
+    font-size: var(--small-font-size);
+  }
+
+  .header_top{
+    background-color: var(--first-color-alt);
+    border-bottom: 1px solid var(--first-color);
+    padding-block: 0.875rem;
+  }
+
+.header_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header_contact span:first-child{
+    margin-right: 2rem;
+}
+
+.header_contact span,
+.header_alert-new,
+.header_top-action{
+    font-size: var(--small-font-size);
+}
+
+.header_alert-new{
+    color: var(--text-color-light);
+    font-weight: var(--weight-600);
+}
+
+.header_top-action{
+    color: var(--text-color);
+}
+.nav,
+.nav_menu,
+.nav_list,
+.header_user-action{
+    display: flex;
+    align-items: center;
+}
+
+.nav{
+    height: calc(var(--header-height) + 2.5rem);
+    justify-content: space-between;
+}
+
+.nav_logo-img{
+    width: 150px;
+}
+
+.nav_menu{
+    width: 100%;
+    margin-left: 2.5rem;
+}
+
+.nav_list{
+    column-gap: 2.5rem;
+    margin-right: auto;
+}
+
+.nav_link{
+    color: var(--title-color);
+    font-weight: var(--weight-700);
+    transition: all 0.2s var(--transition);
+}
+
+.header_search{
+    width: 340px;
+    position: relative;
+}
+
+.header_search .form_input{
+    width: 100%;
+}
+
+.search_btn{
+    position: absolute;
+    top: 24%;
+    right: 1.5rem;
+    cursor: pointer;
+}
+
+.header_user-action {
+    column-gap: 1.rem;
+}
+
+.header_action-btn{
+    position: relative;
+    margin-left: 1rem;
+}
+
+.header_action-btn img{
+    width: 30px;
+}
+
+.header_action-btn .count{
+    position: absolute;
+    top: -0.625rem;
+    right: -0.625rem;
+    background-color: var(--first-color);
+    color: var(--body-color);
+    height: 18px;
+    width: 18px;
+    line-height: 18px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: var(--tiny-font-size);
+}
+.active-link,
+.nav_link:hover{
+    color: var(--first-color);
+}
+.footer_container{
+    display: grid;
+    grid-template-columns: 4.5fr repeat(2, 2fr) 3.5fr;
+    padding-block: 2.5rem;
+  }
+  
+  .footer_subtitle{
+    color: var(--text-color-light);
+    font-size: var(--small-font-size);
+    margin-block: 1.25rem 0.625rem;
+  }
+  
+  .footer_description{
+    margin-bottom: 0.25rem;
+  }
+  
+  .footer_logo-img{
+    width: 150px;
+    margin-bottom: 1rem;
+  }
+  .footer_description span{
+    font-weight: var(--weight-600);
+  }
+  
+  .footer_social .footer_subtitle{
+    margin-top: 1.875rem;
+  }
+  .footer_social-link{
+    column-gap: 0.25rem;
+  }
+  .footer_social-icon{
+    width: 30px;
+    opacity: 0.7;
+  }
+  
+  .footer_link{
+    color: var(--title-color);
+    font-size: var(--small-font-size);
+    margin-bottom: 1rem;
+    display: block;
+    transition: all 0.3s var(--transition);
+  }
+  
+  .footer_contact{
+    font-size: 20px;
+  }
+  .footer_title{
+    margin-bottom: 1rem;
+  }
+  
+  .footer_bottom{
+    display: flex;
+    justify-content: space-between;
+    padding-block: 1.25rem;
+    border-top: 1px solid var(--border-color-alt);
+  }
+  
+  .copyright{
+    color: var(--text-color-light);
+    font-size: var(--small-font-size);
+  }
+  
+  
+  
+  
+
+
+
+
+  /* Rating Styles */
+.stars {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.star {
+    width: 24px;
+    height: 24px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>');
+    cursor: pointer;
+}
+
+.star.active {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="%23FCD34D" stroke="%23FCD34D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>');
+}
+
+/* Dynamic Rating Text */
+.rating_text {
+    font-size: var(--font-size-xsmall);
+    color: var(--accent-color);
+}
+
+.review-section {
+    border: 3px solid #ddd; /* Border to enclose the section */
+    padding: 20px; /* Padding for spacing inside the box */
+    border-radius: 8px; /* Rounded corners for a softer look */
+    background-color: #fff; /* White background to contrast with border */
+    max-width: 1000px; /* Limit the width for better readability */
+    margin: 20px auto; /* Center align the review section */
+}
+
+.review-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.rating-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.rating-label {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.stars {
+    display: flex;
+    gap: 5px;
+}
+
+.star {
+    width: 24px;
+    height: 24px;
+    background-color: #ddd;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.star.active {
+    background-color: gold; /* Highlight active stars */
+}
+
+.review-message {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.upload-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.upload-btn {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.upload-btn .icon {
+    margin-right: 10px;
+}
+
+.reward-text {
+    font-size: 14px;
+    color: #555;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group input {
+    margin-right: 10px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-back,
+.btn-submit {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-back {
+    background-color: #ccc;
+}
+
+.btn-submit {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-back:hover {
+    background-color: #e2e2e2;
+}
+
+.btn-submit:hover {
+    background-color: #45a049;
+}
+
+
+/* Định dạng chung cho cả hai phần đánh giá */
+.rating-group {
+    margin-bottom: 20px;
+}
+
+.rating-label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Phần đánh giá chất lượng sản phẩm */
+.rating-group.product-rating {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.rating-group.product-rating .rating-label {
+    color: #3e3e3e;
+}
+
+.rating-group.product-rating .stars .star {
+    background-color: #ccc;
+}
+
+.rating-group.product-rating .stars .star.selected {
+    background-color: #ff9800; /* Màu vàng cho ngôi sao khi được chọn */
+}
+
+.rating-group.product-rating .rating-text {
+    color: #4CAF50; /* Màu xanh cho phần mô tả 'Tuyệt vời' */
+}
+
+/* Phần đánh giá dịch vụ người bán */
+.rating-group.service-rating {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.rating-group.service-rating .rating-label {
+    color: #3e3e3e;
+}
+
+.rating-group.service-rating .stars .star {
+    background-color: #58606134;
+}
+
+.rating-group.service-rating .stars .star.selected {
+    background-color: #777777; /* Màu xanh da trời cho ngôi sao khi được chọn */
+}
+
+.rating-group.service-rating .rating-text {
+    color: #0ba149; /* Màu xanh đậm cho phần mô tả 'Tuyệt vời' */
+}
+
+/* Định dạng cho phần còn lại trong form */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.upload-buttons {
+    margin-top: 10px;
+}
+
+.checkbox-group {
+    margin-top: 15px;
+}
+
+/* Button styles */
+.btn-back, .btn-submit {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.btn-back {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-submit {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.upload-btn {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .upload-btn .icon {
+    margin-right: 10px;
+    font-size: 18px;
+  }
+  
+  input[type="file"] {
+    display: none; /* Ẩn input file */
+  }
+  

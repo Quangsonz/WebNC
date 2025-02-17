@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="nhaxet.css" />
+
+    <title>Nhận xét Website</title>
+
+    <link rel="icon" href="assets/img/shop.png" type="image-icon">
+    <script src="nhanxet.js"></script>
+  </head>
+  <body>
+    <!--=============== HEADER ===============-->
+    <header class="header">
+        <div class="header_top">
+            <div class="header_container container">
+                <div class="header_contact">
+                    <span>(+84) 565 077 172</span>
+                    <span>Our contact</span>
+                </div>
+                <p class="header_alert-new">
+                        Siêu sale đón Tết - Ưu đãi đầu năm
+                </p>
+                <a href="#" class="header_top-action">
+                    Login / Sign in
+                </a>
+            </div>
+        </div>
+
+        <nav class="nav container">
+            <a href="index.html" class="nav_logo">
+                <img src="assets/img/logo.svg" alt="logo" class="nav_logo-img">
+            </a>
+            <div class="nav_menu" id="nav-menu">
+                <ul class="nav_list">
+                    <li class="nav_item">
+                        <a href="" class="nav_link active-link" >Home</a>
+                    </li>
+
+                    <li class="nav_item">
+                        <a href="" class="nav_link">Shop</a>
+                    </li>
+
+                    <li class="nav_item">
+                        <a href="" class="nav_link">My Account</a>
+                    </li>
+
+                    <li class="nav_item">
+                        <a href="" class="nav_link">Blog</a>
+                    </li>
+
+                    <li class="nav_item">
+                        <a href="" class="nav_link">Login</a>
+                    </li>
+                </ul>
+                <div class="header_search">
+                    <input type="text" 
+                    placeholder= "Tìm kiếm sản phẩm" 
+                    class="form_input"
+                    />
+
+                    <button class="search_btn">
+                        <img src="assets/img/search.png" alt="seacrh">
+                    </button>
+                </div>
+            </div>
+            <div class="header_user-action">
+                <a href="../Son/checkout.html" class="header_action-btn">
+                    <img src="assets/img/icon-heart.svg" alt="heart">
+                    <span class="count">3</span>
+                </a>
+
+                <a href="../Son/cart.html" class="header_action-btn">
+                    <img src="assets/img/icon-cart.svg" alt="heart">
+                    <span class="count">3</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!--=============== MAIN ===============-->
+    <main class="main">
+      <!--=============== BREADCRUMB ===============-->
+      <section class="breadcrumb">
+        <ul class="breadcrumb_list container">
+            <li><a href="index.html" class="breadcrumb_link">Home</a></li>
+            <li><span class="breadcrumb_link">></span></li>
+            <li><span class="breadcrumb_link">Nhận xét</span></li>
+            
+        </ul>
+      </section>
+       
+      <!--=============== Product ===============-->
+      <div class="review-section">
+        <h2 class="title">Đánh Giá Sản Phẩm</h2>
+        
+        <form class="review-form" id="reviewForm">
+            <!-- Product Rating -->
+            <div class="rating-group product-rating">
+                <span class="rating-label">Chất lượng sản phẩm</span>
+                <div class="stars">
+                    <span class="star" data-rating="1"></span>
+                    <span class="star" data-rating="2"></span>
+                    <span class="star" data-rating="3"></span>
+                    <span class="star" data-rating="4"></span>
+                    <span class="star" data-rating="5"></span>
+                </div>
+                <input type="hidden" name="productRating" id="productRating" value="0">
+                <span class="rating-text">Tuyệt vời</span> <!-- Thêm phần tử này -->
+            </div>
+            <!-- Product Details -->
+            <div class="form-group">
+                <label for="color">Màu sắc:</label>
+                <input type="text" id="color" name="color" placeholder="Để lại đánh giá" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="material">Chất liệu:</label>
+                <input type="text" id="material" name="material" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="description">Đúng với mô tả:</label>
+                <input type="text" id="description" name="description" required>
+            </div>
+    
+            <!-- Review Message -->
+            <div class="review-message">
+                <p>Hãy chia sẻ những điều bạn thích về sản phẩm này với những người mua khác nhé.</p>
+                <textarea name="message" id="message" rows="4" placeholder="Viết đánh giá..." required></textarea>
+            </div>
+    
+            <!-- Upload Buttons -->
+            <div class="upload-buttons">
+                <label for="imageUpload" class="upload-btn">
+                    <span class="icon">📷</span>
+                    Thêm Hình ảnh
+                    <input type="file" id="imageUpload" name="imageUpload" accept="image/*">
+                </label>
+                <label for="videoUpload" class="upload-btn">
+                    <span class="icon">🎥</span>
+                    Thêm Video
+                    <input type="file" id="videoUpload" name="videoUpload" accept="video/*">
+                </label>
+            </div>
+    
+            <p class="reward-text">Thêm 50 ký tự và 1 hình ảnh và 1 video để nhận 200 xu</p>
+    
+            <!-- Username Display Option -->
+            <div class="checkbox-group">
+                <input type="checkbox" id="showUsername" name="showUsername" checked>
+                <label for="showUsername">Hiển thị tên đăng nhập trên đánh giá này</label>
+            </div>
+    
+            <!-- Service Rating -->
+            <h3 class="subtitle">Về Dịch vụ</h3>
+            <div class="rating-group service-rating">
+                <span class="rating-label">Dịch vụ của người bán</span>
+                <div class="stars">
+                    <span class="star" data-rating="1"></span>
+                    <span class="star" data-rating="2"></span>
+                    <span class="star" data-rating="3"></span>
+                    <span class="star" data-rating="4"></span>
+                    <span class="star" data-rating="5"></span>
+                </div>
+                <input type="hidden" name="serviceRating" id="serviceRating" value="0">
+                <span class="rating-text">Tuyệt vời</span>
+            </div>
+    
+            <!-- Form Actions -->
+            <div class="form-actions">
+                <button type="button" class="btn-back">TRỞ LẠI</button>
+                <button type="submit" class="btn-submit">HOÀN THÀNH</button>
+            </div>
+        </form>
+    </div>
+    
+    
+    
+ 
+    
+    
+    <!--=============== FOOTER ===============-->
+    <footer class="footer container">
+        <div class="footer_container grid">
+            <div class="footer_content">
+                <a href="index.html" class="footer_logo">
+                    <img src="assets/img/logo.svg" alt="logo" class="footer_logo-img">
+                </a>
+                <h4 class="footer_contact">Contact</h4>
+    
+                <p class="footer_description">
+                    <span>Address:</span> Số 234, Hoàng Quốc Việt, Bắc Từ Liêm, Hà Nội
+                </p>
+                <p class="footer_description">
+                    <span>Phone:</span> (+84) 565 077 172
+                </p>
+                <p class="footer_description"> 
+                    <span>Time:</span> 9:00 - 20:00, Thứ 2 - Thứ 7
+                </p>
+    
+                <div class="footer_social">
+                    <h4 class="footer_subtitle">Follow me</h4>
+                    <div class="footer_social-link">
+                        <a href="">
+                            <img src="assets/img/icon-facebook.svg" alt="facebook" class="footer_social-icon">
+                        </a>
+                        <a href="">
+                            <img src="assets/img/icon-twitter.svg" alt="facebook" class="footer_social-icon">
+                        </a>
+                        <a href="">
+                            <img src="assets/img/icon-instagram.svg" alt="facebook" class="footer_social-icon">
+                        </a>
+                        <a href="">
+                            <img src="assets/img/icon-pinterest.svg" alt="facebook" class="footer_social-icon">
+                        </a>
+                        <a href="">
+                            <img src="assets/img/icon-youtube.svg" alt="facebook" class="footer_social-icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer_content">
+                <h3 class="footer_title">Address</h3>
+                <ul class="footer_links">
+                    <li><a href="" class="footer_link">Blog</a></li>
+                    <li><a href="" class="footer_link">Privacy Policy</a></li>
+                    <li><a href="" class="footer_link">Terms & Conditions</a></li>
+                    <li><a href="" class="footer_link">Contact </a></li>
+                    <li><a href="" class="footer_link">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer_content">
+                <h3 class="footer_title">My Account</h3>
+                <ul class="footer_links">
+                    <li><a href="" class="footer_link">Sign in</a></li>
+                    <li><a href="" class="footer_link">View cart</a></li>
+                    <li><a href="" class="footer_link">Track My Order</a></li>
+                    <li><a href="" class="footer_link">Help</a></li>
+                    <li><a href="" class="footer_link">Order</a></li>
+                </ul>
+            </div>
+            <div class="footer_content">
+                <h3 class="footer_title">Secured Payment Gateways</h3>
+                <img src="assets/img/payment-method.png" alt="" class="payment_img">
+            </div>
+        </div>
+        <div class="footer_bottom">
+                <p class="copyright">@Copyright; 2025. All right reserved</p>
+        </div>
+    </footer>
+
+    <!--=============== SWIPER JS ===============-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src=""></script>
+  </body>
+</html>
