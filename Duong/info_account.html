@@ -14,9 +14,9 @@
     />
 
     <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="assets/css/login.css" />
+    <link rel="stylesheet" href="assets/css/info_account.css" />
 
-    <title>Login</title>
+    <title>My Account</title>
     <link rel="icon" href="assets/img/shop.png" type="image-icon" />
   </head>
   <body>
@@ -84,53 +84,46 @@
         </div>
       </nav>
     </header>
-    <main>
-      <!-- Phần hình ảnh -->
-      <div class="image-container">
-        <img src="assets/img/mau1.jpg" alt="Login Illustration" />
-      </div>
+    <div class="profile-container">
+    <div class="avatar-container" onclick="document.getElementById('fileInput').click();">
+        <img id="avatarPreview" class="avatar" src="assets/img/user.png" alt="Avatar">
+    </div>
+    <input type="file" id="fileInput" accept="image/*" onchange="previewImage(event)">
+    
+    <script>
+    function previewImage(event) {
+        const reader = new FileReader();
+        reader.onload = function() {
+            const avatar = document.getElementById("avatarPreview");
+            avatar.src = reader.result;
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    }
+    </script>
 
-      <!-- Phần đăng nhập -->
-      <div class="login-container">
-        <h2>Login</h2>
-        <form action="your-login-endpoint" method="POST">
-          <div class="form-group">
-            <label for="email">Login Name</label>
-            <input type="text" id="fullname" name="fullname" required />
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required />
-          </div>
-          <button type="submit" class="login-btn">Login</button>
-          <div class="extra-links">
-            <p><a href="forgot-password.html">Quên mật khẩu?</a></p>
-            <p><a href="register.html">Create an account</a></p>
-            <!-- Chuyển đến trang đăng ký -->
-          </div>
+      <div class="account-form">
+        <h2>Thông Tin Tài Khoản</h2>
+        <form id="updateForm">
+          <label>Họ và tên:</label>
+          <input type="text" id="fullname" />
+
+          <label>Email:</label>
+          <input type="email" id="email" disabled />
+
+          <label>Ngày sinh:</label>
+          <input type="date" id="dob" />
+
+          <label>Số điện thoại:</label>
+          <input type="text" id="phone" />
+
+          <label>Địa chỉ:</label>
+          <input type="text" id="address" />
+
+          <button type="submit">Cập nhật thông tin</button>
         </form>
-        <div class="social-login">
-          <p>Or login with:</p>
-          <a href="https://facebook.com" class="facebook-btn">
-            <img
-              src="assets/img/Facebook_Logo.png"
-              alt="Facebook Logo"
-              class="social-icon"
-            />
-            Login with Facebook
-          </a>
-          <a href="https://google.com" class="google-btn">
-            <img
-              src="assets/img/google_logo.png"
-              alt="Google Logo"
-              class="social-icon"
-            />
-            Login with Google
-          </a>
-        </div>
       </div>
-    </main>
-
+    </di>
+</div>
     <!--=============== NEWSLETTER ===============-->
     <section class="newsletter section home_newletter">
       <div class="newsletter_container container">
@@ -251,5 +244,63 @@
 
     <!--=============== MAIN JS ===============-->
     <script src=""></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("/getUserInfo")
+          .then((response) => response.json())
+          .then((user) => {
+            if (user) {
+              document.getElementById("fullname").value = user.fullname;
+              document.getElementById("email").value = user.email;
+              document.getElementById("dob").value = user.dob;
+              document.getElementById("phone").value = user.phone;
+              document.getElementById("address").value = user.address;
+            }
+          })
+          .catch((error) =>
+            console.error("Lỗi khi lấy dữ liệu người dùng:", error)
+          );
+      });
+
+      document
+        .getElementById("updateForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Chặn form submit mặc định
+
+          let fullname = document.getElementById("fullname").value.trim();
+          let dob = document.getElementById("dob").value;
+          let phone = document.getElementById("phone").value.trim();
+          let address = document.getElementById("address").value.trim();
+
+          if (!fullname || !dob || !phone || !address) {
+            alert("Vui lòng điền đầy đủ thông tin trước khi cập nhật!");
+            return;
+          }
+
+          let userData = {
+            fullname: fullname,
+            dob: dob,
+            phone: phone,
+            address: address,
+          };
+
+          fetch("/updateUserInfo", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(userData),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.success) {
+                alert("Cập nhật thông tin thành công!");
+              } else {
+                alert("Cập nhật thất bại, vui lòng thử lại!");
+              }
+            })
+            .catch((error) =>
+              console.error("Lỗi khi cập nhật thông tin:", error)
+            );
+        });
+    </script>
   </body>
 </html>
